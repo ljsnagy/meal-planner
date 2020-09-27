@@ -1,30 +1,47 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container">
+    <h1>Meal Planner</h1>
+    <nav class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <router-link to="/" custom v-slot="{ navigate, href, isActive }">
+          <li class="pure-menu-item" :class="isActive && 'pure-menu-selected'">
+            <a :href="href" @click="navigate" class="pure-menu-link">
+              Menu
+            </a>
+          </li>
+        </router-link>
+        <router-link to="/recipies" custom v-slot="{ navigate, href, isActive }">
+          <li class="pure-menu-item" :class="isActive && 'pure-menu-selected'">
+            <a :href="href" @click="navigate" class="pure-menu-link">
+              Recipies
+            </a>
+          </li>
+        </router-link>
+        <router-link to="/pantry" custom v-slot="{ navigate, href, isActive }">
+          <li class="pure-menu-item" :class="isActive && 'pure-menu-selected'">
+            <a :href="href" @click="navigate" class="pure-menu-link">
+              Pantry
+            </a>
+          </li>
+        </router-link>
+        <router-link to="/shopping-list" custom v-slot="{ navigate, href, isActive }">
+          <li class="pure-menu-item" :class="isActive && 'pure-menu-selected'">
+            <a :href="href" @click="navigate" class="pure-menu-link">
+              Shopping List
+            </a>
+          </li>
+        </router-link>
+      </ul>
+    </nav>
+    <router-view/>
   </div>
-  <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .container {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 </style>

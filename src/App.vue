@@ -38,10 +38,25 @@
 </template>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   .container {
-    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+
+  .section {
+    margin: 1rem 0;
+  }
+
+  .full-width {
+    width: 100%;
   }
 </style>

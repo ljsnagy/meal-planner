@@ -1,5 +1,8 @@
 import { createStore } from 'vuex';
 
+import menu from './modules/menu';
+import recipes from './modules/recipes';
+
 export default createStore({
   state: {
   },
@@ -8,5 +11,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    menu,
+    recipes,
   },
 });
